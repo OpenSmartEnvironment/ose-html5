@@ -1,0 +1,38 @@
+{
+  "name": "ose-html5",
+  "version": "0.1.12",
+  "author": "Jan Snasel <snaselj@gmail.com>",
+  "description": "Open Smart Environment HTML5 frontend",
+  "contributors": [
+    {
+      "name": "Jan Snasel",
+      "email": "snaselj@gmail.com"
+    },
+    {
+      "name": "Fred Rooks",
+      "email": "fred@fredrooks.com"
+    }
+  ],
+  "main": "./lib/index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opensmartenvironment/ose-html5.git"
+  },
+  "keywords": [
+    "open smart environment",
+    "gui",
+    "frontend",
+    "html5",
+    "javascript"
+  ],
+  "dependencies": {
+    "fxos-font": "^1.0.1",
+    "fxos-icons": "^2.0.0",
+    "punycode": "^1.3.2",
+    "url": "^0.10.3"
+  },
+  "scripts": {
+    "postinstall": "bower update"
+  },
+  "license": "GPL-3.0+"
+}
