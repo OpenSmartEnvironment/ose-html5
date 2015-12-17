@@ -9,7 +9,7 @@ body {
   font-family: "FiraSans";
 }
 
-/* Flex rows and cols {{{1*/
+/* Flex rows and columns {{{1*/
 *.row {
   display: flex;
   flex-direction: row;
@@ -65,47 +65,85 @@ p {
 }
 
 /* Button {{{1*/
-a.button.char,
-span.buttons.char>a {
+@font-face {
+  font-family: "fxos-icons";
+  src: url("../node_modules/fxos-icons/fonts/fxos-icons.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+*.button[act]:before {
+  font-family: "fxos-icons";
+  content: attr(act);
+  display: inline-block;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  font-size: 30px;
+  -webkit-font-smoothing: antialiased;
+}
+
+i.button.char,
+span.buttons.char>i {
   width: 40px;
   height: auto;
   flex-basis: 40px;
-
+  /*
   padding: 0;
-  color: rgb(128, 128, 128);
-  text-align: center;
-  font-size: 24px;
-  font-weight: 900;
+  */
 }
 
-a.button.text,
-span.buttons.text>a {
+i.button.char,
+span.buttons.char {
+  color: rgb(128, 128, 128);
+  text-align: center;
+  /*
+  font-size: 34px;
+  font-weight: 500;
+  font-style: normal;
+
+  font-family: "fxos-icons";
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  */
+}
+
+i.button.text,
+span.buttons.text>i {
   width: auto;
   height: auto;
   padding: 4px 12px;
+}
 
+i.button.text,
+span.buttons.text {
   text-align: center;
   font-size: 20px;
   font-weight: 400;
   font-variant: small-caps;
+  font-style: normal;
 }
 
-*.row>a.button,
-*.row.buttons>a,
-*.row>span.buttons>a {
+*.row>i.button,
+*.row.buttons>i,
+*.row>span.buttons>i {
   display: inline-block;
 }
 
-span.buttons>a {
+span.buttons>i {
   border-right: 1px solid rgb(240, 240, 240);
 }
 
-span.buttons>a:first-child {
+span.buttons>i:first-child {
   border-left: 1px solid rgb(240, 240, 240);
 }
 
-span.buttons>a[value="1"],
-span.buttons>a[value="ok"] {
+span.buttons>i[value="1"],
+span.buttons>i[value="ok"] {
   color: rgb(58, 170, 53);
 }
 
@@ -282,7 +320,7 @@ header.main>span.stretch * {
   cursor: pointer;
 }
 
-a:focus {
+i:focus {
   background-color: rgba(240, 240, 240, 1);
 }
 

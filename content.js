@@ -53,4 +53,5 @@ exports.addModule('node_modules/url/url.js', 'url');  // TODO move to ose
 // Styles
 exports.addCss('css/style.css');
 exports.addCss('node_modules/fxos-font/fxos-font.css');
+//exports.addCss('node_modules/fxos-icons/fxos-icons.css');
 
