@@ -72,7 +72,9 @@ p {
   font-style: normal;
 }
 
-*.button[act]:before {
+i.button.char:before,
+span.buttons.char>i:before {
+/* *.button[act]:before {*/
   font-family: "fxos-icons";
   content: attr(act);
   display: inline-block;
@@ -81,7 +83,7 @@ p {
   text-decoration: inherit;
   text-transform: none;
   text-rendering: optimizeLegibility;
-  font-size: 30px;
+  font-size: 26px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -90,6 +92,7 @@ span.buttons.char>i {
   width: 40px;
   height: auto;
   flex-basis: 40px;
+
   /*
   padding: 0;
   */
@@ -302,11 +305,15 @@ header.main {
   position: fixed;
   left: 0;
   top: 0;
+  background-color: rgb(58, 170, 53);
+  /*
   background: linear-gradient(rgba(224, 224, 224, 1), rgba(58, 170, 53, 1));
+  */
 }
 
-header.main>span.stretch {
-  padding-right: 0;
+header.main>* {
+  height: 100% !important;
+  padding-right: 0 !important;
 }
 
 header.main>span.stretch * {
@@ -314,13 +321,16 @@ header.main>span.stretch * {
 }
 
 /* Focus {{{1*/
-:focus {
+*:focus {
   outline: none;
+}
+
+*[focus] {
   background-color: rgba(248, 248, 248, 1);
   cursor: pointer;
 }
 
-i:focus {
+i[focus] {
   background-color: rgba(240, 240, 240, 1);
 }
 
