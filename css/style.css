@@ -22,7 +22,10 @@ body {
 }
 
 *.row>*.stretch {
+  /*
   flex-basis: fill;
+  */
+
   flex-grow: 1;
   flex-shrink: 1;
 }
@@ -64,6 +67,38 @@ p {
   font-weight: 300;
 }
 
+/* Checkbox {{{1*/
+span.checkbox {
+  width: 20px;
+  height: 20px;
+  flex-basis: 20px;
+
+  text-align: center;
+  border-width: 2px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(58, 170, 53);
+}
+
+span.checkbox::before {
+  content: ' ';
+}
+
+span.checkbox[value="1"]::before,
+span.checkbox[value="true"]::before {
+  content: 'tick';
+
+  color: rgb(58, 170, 53);
+  font-family: "fxos-icons";
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* Button {{{1*/
 @font-face {
   font-family: "fxos-icons";
@@ -72,8 +107,8 @@ p {
   font-style: normal;
 }
 
-i.button.char:before,
-span.buttons.char>i:before {
+i.button.char::before,
+span.buttons.char>i::before {
 /* *.button[act]:before {*/
   font-family: "fxos-icons";
   content: attr(act);
@@ -120,6 +155,7 @@ span.buttons.text>i {
   width: auto;
   height: auto;
   padding: 4px 12px;
+  font-style: normal;
 }
 
 i.button.text,
@@ -128,7 +164,6 @@ span.buttons.text {
   font-size: 20px;
   font-weight: 400;
   font-variant: small-caps;
-  font-style: normal;
 }
 
 *.row>i.button,
@@ -311,7 +346,8 @@ header.main {
   */
 }
 
-header.main>* {
+header.main>i,
+header.main>span {
   height: 100% !important;
   padding-right: 0 !important;
 }
