@@ -297,6 +297,58 @@ li>span.slider {
   padding-right: 40px;
 }
 
+/* Gesture view {{{1*/
+section.gesture {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 40px);
+  overflow: hidden;
+}
+
+section.gesture > canvas {
+  position: fixed;
+  z-index: 0;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+section.touchArea {
+  position: fixed;
+  z-index: 2;
+  left: -40px;
+  top: 40px;
+  width: calc(100% + 40px);
+  height: calc(100% - 40px);
+
+  color: white;
+  cursor: crosshair;
+}
+
+section.gesture > section.buttons {
+  position: fixed;
+  z-index: 3;
+  width: 100px;
+  height: auto;
+  padding: 0;
+  right: 0;
+}
+
+section.gesture > section.buttons > i {
+  display: block;
+  box-sizing: border-box;
+  width: 100px;
+}
+
+section.gesture > section.buttons > i[value='on'] {
+  color: red;
+}
+
+section.gesture > section.buttons > i[value='auto'] {
+  color: blue;
+}
+
 /* Drawer {{{1*/
 section.drawer {
   position: fixed;
