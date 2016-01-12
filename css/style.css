@@ -317,8 +317,8 @@ section.gesture {
 section.gesture > canvas {
   position: fixed;
   z-index: 0;
-  top: 40px;
   left: 0;
+  top: 40px;
   width: 100%;
   height: calc(100% - 40px);
 }
@@ -326,16 +326,23 @@ section.gesture > canvas {
 section.touchArea {
   position: fixed;
   z-index: 2;
-  left: -40px;
+  left: 0;
   top: 40px;
-  width: calc(100% + 40px);
+  width: 100%;
   height: calc(100% - 40px);
 
-  color: white;
   cursor: crosshair;
 }
 
-section.gesture > section.buttons {
+section.touchArea > span {
+  position: fixed;
+  left: -100px;
+  top: -100px;
+  color: white;
+  font-size: 1px;
+}
+
+section.touchArea > section.buttons {
   position: fixed;
   z-index: 3;
   width: 100px;
@@ -344,17 +351,17 @@ section.gesture > section.buttons {
   right: 0;
 }
 
-section.gesture > section.buttons > i {
+section.touchArea > section.buttons > i {
   display: block;
   box-sizing: border-box;
   width: 100px;
 }
 
-section.gesture > section.buttons > i[value='on'] {
+section.touchArea > section.buttons > i[value='on'] {
   color: red;
 }
 
-section.gesture > section.buttons > i[value='auto'] {
+section.touchArea > section.buttons > i[value='auto'] {
   color: blue;
 }
 
