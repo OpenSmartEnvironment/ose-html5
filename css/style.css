@@ -16,12 +16,12 @@ body {
   align-items: center;
 }
 
-*.row>* {
+*.row > * {
   flex-shrink: 0;
   flex-basis: auto;
 }
 
-*.row>*.stretch {
+*.row > *.stretch {
   /*
   flex-basis: fill;
   */
@@ -30,7 +30,7 @@ body {
   flex-shrink: 1;
 }
 
-*.row>*:not(:last-child) {
+*.row > *:not(:last-child) {
   padding-right: 16px;
 }
 
@@ -73,30 +73,27 @@ span.checkbox {
   height: 20px;
   flex-basis: 20px;
 
-  text-align: center;
   border-width: 2px;
   border-radius: 50%;
   border-style: solid;
   border-color: rgb(58, 170, 53);
-}
-
-span.checkbox::before {
-  content: ' ';
-}
-
-span.checkbox[value="1"]::before,
-span.checkbox[value="true"]::before {
-  content: 'tick';
 
   color: rgb(58, 170, 53);
-  font-family: "fxos-icons";
-  font-weight: 500;
-  font-style: normal;
+  text-align: center;
   text-decoration: inherit;
   text-transform: none;
   text-rendering: optimizeLegibility;
+  font-family: "fxos-icons";
   font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
+}
+
+span.checkbox[value="1"]::after,
+span.checkbox[value="true"]::after {
+  content: 'tick';
+  vertical-align: middle;
 }
 
 /* Button {{{1*/
@@ -108,7 +105,7 @@ span.checkbox[value="true"]::before {
 }
 
 i.button.char::before,
-span.buttons.char>i::before {
+span.buttons.char > i::before {
   font-family: "fxos-icons";
   content: attr(data-icon);
   display: inline-block;
@@ -122,7 +119,7 @@ span.buttons.char>i::before {
 }
 
 i.button.char,
-span.buttons.char>i {
+span.buttons.char > i {
   width: 40px;
   height: auto;
   flex-basis: 40px;
@@ -135,7 +132,7 @@ span.buttons.char {
 }
 
 i.button.text,
-span.buttons.text>i {
+span.buttons.text > i {
   width: auto;
   height: auto;
   padding: 4px 12px;
@@ -150,23 +147,23 @@ span.buttons.text {
   font-variant: small-caps;
 }
 
-*.row>i.button,
-*.row.buttons>i,
-*.row>span.buttons>i {
+*.row > i.button,
+*.row.buttons > i,
+*.row > span.buttons > i {
   display: inline-block;
 }
 
-span.buttons>i {
+span.buttons > i {
   border-right: 1px solid rgb(240, 240, 240);
 }
 
-span.buttons>i:first-child {
+span.buttons > i:first-child {
   border-left: 1px solid rgb(240, 240, 240);
 }
 
-span.buttons>i[value="1"],
-span.buttons>i[value="ok"],
-span.buttons>i[value="true"] {
+span.buttons > i[value="1"],
+span.buttons > i[value="ok"],
+span.buttons > i[value="true"] {
   color: rgb(58, 170, 53);
 }
 
@@ -183,21 +180,21 @@ span.slider {
  */
 }
 
-span.slider>span {
+span.slider > span {
   display: block;
   height: 100%;
   width: 100%;
   background-color: rgb(196, 196, 196);
 }
 
-span.slider>span>span {
+span.slider > span > span {
   position: relative;
   display: block;
   height: 100%;
   background-color: rgb(58, 170, 53);
 }
 
-span.slider>span>span>div {
+span.slider > span > span > div {
   position: absolute;
   display: block;
   box-sizing: border-box;
@@ -252,7 +249,20 @@ li {
 }
 
 li.divider {
-  padding: 20px 0 0 0;
+  padding: 20px 0 16px 0;
+}
+
+li.divider::after {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: calc(100% - 16px);
+  height: 3px;
+  left: 8px;
+  bottom: 0;
+
+  content: "";
+  background-color: rgb(224, 224, 224);
 }
 
 li::after {
@@ -272,26 +282,25 @@ li::after {
   */
 }
 
-li.divider::after,
 li:last-child::after {
   display: none;
   height: 0;
 }
 
-li.row>*:first-child {
+li.row > *:first-child {
   margin-left: 16px;
 }
 
-li.row>*:last-child {
+li.row > *:last-child {
   margin-right: 16px;
 }
 
-li:not(.row)>* {
+li:not(.row) > *:not(ul) {
   margin-left: 16px;
   margin-right: 16px;
 }
 
-li>span.slider {
+li > span.slider {
   margin: 0;
   padding-left: 40px;
   padding-right: 40px;
@@ -391,27 +400,27 @@ header.main {
   */
 }
 
-header.main>i,
-header.main>span {
+header.main > i,
+header.main > span {
   height: 100% !important;
   padding-right: 0 !important;
 }
 
-header.main>span.stretch * {
+header.main > span.stretch * {
   color: inherit;
 }
 
-/* Focus {{{1*/
+/* Active element {{{1*/
 *:focus {
   outline: none;
 }
 
-*[focus] {
+*[active]:not(.touchArea) {
   background-color: rgba(248, 248, 248, 1);
   cursor: pointer;
 }
 
-i[focus] {
+i[active] {
   background-color: rgba(240, 240, 240, 1);
 }
 
