@@ -19,7 +19,6 @@ exports = O.init();
  */
 
 // Public {{{1
-exports.addHead('lib/loading.js', 0.1);
 
 // OSE modules
 exports.addModule('lib/body');
