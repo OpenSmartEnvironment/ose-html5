@@ -73,6 +73,17 @@ body > section.main {
   padding-right: 16px;
 }
 
+*.row.no-child-padding > * {
+  padding-right: 0;
+}
+
+*.row.center::before,
+*.row.center::after {
+  content: ' ';
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
 /* Hx, P {{{1*/
 h2 {
   margin: 0;
@@ -155,6 +166,11 @@ span.buttons.char > i::before {
   text-rendering: optimizeLegibility;
   font-size: 26px;
   -webkit-font-smoothing: antialiased;
+}
+
+i.button.char.anticlockwise::before,
+span.buttons.char > i.anticlockwise::before {
+  transform: rotate(-90deg);
 }
 
 i.button.char,
