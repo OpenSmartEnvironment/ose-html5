@@ -26,6 +26,7 @@ exports = O.init();
 // OSE modules
 exports.addModule('lib/body');
 exports.addModule('lib/browser');
+exports.addModule('lib/box.js');
 exports.addModule('lib/control/button');
 exports.addModule('lib/control/buttons');
 exports.addModule('lib/control/checkbox');
@@ -33,10 +34,8 @@ exports.addModule('lib/control/onoff');
 exports.addModule('lib/control/slider');
 //exports.addModule('lib/dialog');
 exports.addModule('lib/drawer');
-exports.addModule('lib/header');
 exports.addModule('lib/index');
 exports.addModule('lib/input');
-exports.addModule('lib/main.js');
 exports.addModule('lib/view/dashboard');
 exports.addModule('lib/view/detail');
 exports.addModule('lib/view/entry');

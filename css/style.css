@@ -3,10 +3,49 @@ body {
   margin: 0;
   border: none;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   color: rgb(80, 80, 80);
   font-family: "FiraSans";
+}
+
+body > span {
+  position: fixed;
+  display: block;
+  top: 0;
+  height: 40px;
+  line-height: 40px;
+}
+
+body > span.right {
+  right: 0;
+}
+
+body > span > i {
+  height: 100% !important;
+}
+
+body > header {
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  padding: 0 40px;
+
+  background-color: rgb(58, 170, 53);
+  /*
+  background: linear-gradient(rgba(224, 224, 224, 1), rgba(58, 170, 53, 1));
+  */
+}
+
+body > section.main {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  margin: 40px 0 0 0;
 }
 
 /* Flex rows and columns {{{1*/
@@ -174,10 +213,6 @@ span.slider {
   box-sizing: border-box;
   padding: 14px 40px;
   height: 32px;
-/*
-  border: 16px solid rgba(255, 255, 255, 1);
-  border: 16px solid rgba(0, 0, 0, 0);
- */
 }
 
 span.slider > span {
@@ -226,6 +261,8 @@ header * {
   white-space: nowrap;
   padding-top: 0;
   padding-bottom: 0;
+  height: 100%;
+  color: inherit;
 }
 
 /* List {{{1*/
@@ -241,11 +278,6 @@ li {
   position: relative;
   width: 100%;
   padding: 8px 0;
-  /*
-  padding: 8px 0;
-  width: calc(100% - 32px);
-  padding: 8px 16px 8px 16px;
-  */
 }
 
 li.divider {
@@ -276,10 +308,6 @@ li::after {
 
   content: "";
   background-color: rgb(224, 224, 224);
-
-  /*
-  border-bottom: 1px solid rgb(224, 224, 224);
-  */
 }
 
 li:last-child::after {
@@ -379,42 +407,11 @@ section.drawer {
   background-color: rgba(255, 255, 255, 1);
 }
 
-header.drawer {
+section.drawer > header {
   width: 100%;
   height: 40px;
   line-height: 40px;
   background-color: rgba(224, 224, 224, 1);
-}
-
-/* Main {{{1*/
-section.main {
-  position: fixed;
-  left: 0;
-  top: 40px;
-  width: 100%;
-  height: calc(100% - 40px);
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-header.main {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: rgb(58, 170, 53);
-  /*
-  background: linear-gradient(rgba(224, 224, 224, 1), rgba(58, 170, 53, 1));
-  */
-}
-
-header.main > i,
-header.main > span {
-  height: 100% !important;
-  padding-right: 0 !important;
-}
-
-header.main > span.stretch * {
-  color: inherit;
 }
 
 /* Active element {{{1*/
