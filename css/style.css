@@ -3,49 +3,9 @@ body {
   margin: 0;
   border: none;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
 
   color: rgb(80, 80, 80);
   font-family: "FiraSans";
-}
-
-body > span {
-  position: fixed;
-  display: block;
-  top: 0;
-  height: 40px;
-  line-height: 40px;
-}
-
-body > span.right {
-  right: 0;
-}
-
-body > span > i {
-  height: 100% !important;
-}
-
-body > header {
-  box-sizing: border-box;
-  position: fixed;
-  left: 0;
-  top: 0;
-
-  padding: 0 40px;
-
-  background-color: rgb(58, 170, 53);
-  /*
-  background: linear-gradient(rgba(224, 224, 224, 1), rgba(58, 170, 53, 1));
-  */
-}
-
-body > section.main {
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  margin: 40px 0 0 0;
 }
 
 /* Flex rows and columns {{{1*/
@@ -407,27 +367,6 @@ section.touchArea > section.buttons > i[value='on'] {
 
 section.touchArea > section.buttons > i[value='auto'] {
   color: blue;
-}
-
-/* Drawer {{{1*/
-section.drawer {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: auto;
-  max-width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  background-color: rgba(255, 255, 255, 1);
-}
-
-section.drawer > header {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  background-color: rgba(224, 224, 224, 1);
 }
 
 /* Active element {{{1*/
