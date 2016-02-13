@@ -27,9 +27,9 @@
   ],
   "dependencies": {
     "fxos-font": "^1.0.1",
-    "fxos-icons": "^2.0.0",
-    "punycode": "^1.3.2",
-    "url": "^0.10.3"
+    "fxos-icons": "^2.1.2",
+    "punycode": "^1.4.0",
+    "url": "^0.11.0"
   },
   "license": "GPL-3.0+"
 }
